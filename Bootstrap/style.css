@@ -1,0 +1,22 @@
+.btn-primary {
+  background-color: rgb(10, 247, 247);
+  color: blue;
+}
+
+.container {
+  background-color: aqua;
+  border: 2px 4px 4px solid rgb(5, 81, 243);
+  border-style: ridge;
+  border-top-right-radius: 4cqmax;
+}
+
+/* img {
+  width: 450px;
+  height: 300px;
+  margin: 10px;
+  transition: all 1s;
+}
+
+img:hover {
+  transform: scale(1.1);
+} */
