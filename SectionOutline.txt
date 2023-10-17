@@ -49,7 +49,7 @@ return
 JAVASCRIPT DATA STRUCTURES
 -----------------
 Array
-Object
+Object - colection of property
 
 JAVASCRIPT LOOPING
 -----------------
