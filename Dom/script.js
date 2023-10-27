@@ -2,7 +2,7 @@
 
 // button[0].addEventListener("click", function () {
 //   console.log("Button clicked");
-// alert("Button clicked");
+//   alert("Button clicked");
 // });
 
 var button = document.getElementById("enter");
