@@ -1,59 +1,46 @@
-// Advanced Objects
+// Pass by Value vs Pass by Reference
+// // In JavaScript, everything is passed by value. However, when it comes to objects and arrays, they are passed by reference. This means that
+// // if you change the object or array inside the function, it will be affected outside the function as well. This is because the value of the
+// // variable is a reference to the object.
+// // Let's take a look at an example of this:
+var a = 5;
+var b = 10;
 
-var object1 = { value: 10 };
-var object2 = object1;
-var object3 = { value: 10 };
-console.log(object1 === object2); // true
-console.log(object1 === object3); // false
-object1.value = 15;
-console.log(object2.value); // 15
-console.log(object3.value); // 10
+b++;
+console.log(a);
+console.log(b);
 
-// Context vs Scope
+let objt1 = { name: "yao", password: "123" };
+let objt2 = objt1;
 
-// Scope
-function b() {
-  let a = 4;
-}
-console.log(a); // ReferenceError: a is not defined
-b();
-console.log(a); // ReferenceError: a is not defined
+objt2.passord = "easypeasy";
+console.log("objt1 : ", objt1);
+console.log("objt2 : ", objt2);
 
-// Context
-console.log(this); // Window
-function a() {
-  console.log(this); // Window
-}
-a();
-const object4 = {
-  a: function () {
-    console.log(this); // object4
+var c = [1, 2, 3, 4, 5];
+var d = [].concat(c);
+d.push(187628761);
+console.log("c : ", c);
+console.log("d : ", d);
+
+let objt = { a: "a", b: "b", c: "c" };
+let clone1 = Object.assign({}, objt);
+
+objt.c = 5;
+console.log(clone1);
+
+let objt3 = {
+  a: "a",
+  b: "b",
+  c: {
+    deep: "try and copy me",
   },
 };
-object4.a();
-
-// Instantiation
-class Player {
-  constructor(name, type) {
-    console.log(this); // Wizard
-    this.name = name;
-    this.type = type;
-  }
-  introduce() {
-    console.log(`Hi I am ${this.name}, I'm a ${this.type}`);
-  }
-}
-class Wizard extends Player {
-  constructor(name, type) {
-    super(name, type);
-    console.log(this); // Wizard
-  }
-  play() {
-    console.log(`WEEEE I'm a ${this.type}`);
-  }
-}
-const wizard1 = new Wizard("Shelly", "Healer");
-const wizard2 = new Wizard("Shawn", "Dark Magic");
-wizard1.play();
-wizard1.introduce();
-wizard2.play();
+let clone = Object.assign({}, objt3);
+let clone2 = { ...objt3 };
+let superClone = JSON.parse(JSON.stringify(objt3));
+objt3.c.deep = "hahaha";
+console.log("objt3 : ", objt3);
+console.log("clone : ", clone);
+console.log("clone2 : ", clone2);
+console.log("superClone : ", superClone);
