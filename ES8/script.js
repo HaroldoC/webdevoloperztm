@@ -24,3 +24,19 @@ Object.keys(obj).forEach((key, index) => {
   console.log(Object.keys(obj)[index]);
   console.log(obj[key]);
 });
+
+// ASYNC AWAIT
+
+// Callbacks pyramid of doom
+
+movePlayer(100, "left")
+  .then(() => movePlayer(400, "left"))
+  .then(() => movePlayer(10, "right"))
+  .then(() => movePlayer(330, "left"));
+
+// ASYNC
+async function playerStart() {
+  const firstMove = await movePlayer(100, "left"); // pause
+  await movePlayer(400, "left"); // pause
+  await movePlayer(10, "right"); // pause
+}
